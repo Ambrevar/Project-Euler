@@ -1,0 +1,100 @@
+Only the 'a's that are powers of a single prime number need a special consideration:
+
+	4 8 16 32 64
+	9 27 81
+	25
+	36
+	49
+	100
+
+All other 87 'a's (since 2<=a<=100) generate 99 distinct numbers (2<=b<=100).
+This is easily seen by writing numbers in their decomposition into prime
+factors.
+
+We call 'DST' the function that returns the cardinal of
+
+	{N^b with 2<=b<=100, N^b not in {X^y, with X<N and 2<=y<=100}}
+
+For instance, DST(2)=99.
+
+Let's consider the powers of prime numbers.
+
+We call SN[a,b], a<=b, the set {N^a, N^{a+1}, ..., N^b}.
+
+We call SN[a,b]%m, a<=b, the set {N^k, k=a..b, k%m == 0}. In other words, the
+set of powers from 'a' to 'b' with a step of 'm'.
+
+
+## 4
+
+Since 2^2 == 4, S4[2,50] is contained in S2[2,100].
+S4[51, 100] does not overlap with S2[2,100] = {2^2, ..., 2^100}.
+
+DST(4) = 50
+
+
+## 8
+
+Since 2^3 == 8, S8[2,33] is contained in S2[2,100].
+S8[34,100] does not overlap with S2[2,100].
+
+Since 4^{3/2} == 8, S8[34,66]%2 == S4[51,100]%3.
+Redundant terms are S8[34,66]%2, that is, 17 terms.
+
+DST(8) = 67 - 17 = 50
+
+
+## 16
+
+Since 2^4 == 16, S16[2,25] is contained in S2[2,100].
+Since 4^2 == 16, S16[26,50] is contained in S4[51,100].
+S16[51,100] does not overlap with S2[2,100] nor S4[51,100].
+
+Since 8^{4/3} == 16, S16[51,75]%3 == S8[68,100]%.
+There are 9 redundant terms.
+
+DST(16) = 50 - 9 = 41
+
+
+## 32
+
+Since 2^5 == 32, S32[2,20] is contained in S2[2,100].
+S32[21,100] does not overlap with S2[2,100].
+
+Since 4^{5/2} == 32, S32[21,40]%2 == S4[51,100]%5.
+Since 8^{5/3} == 32, S32[21,60]%3 == S8[35,100]%5.
+Since 16^{5/4} == 32, S32[21,80]%4 == S16[26,100]%5.
+
+Cardinal( S32[21,40]%2 union S32[21,60]%3 union S32[21,80]%4 ) = 29
+
+DST(32) = 80 - 29 = 51
+
+
+## 64
+
+Since 8^2 == 64, S64[2,50] is contained in S2[2,100], S4[2,100] and S8[2,100].
+S64[51,100] does not overlap with any of the previous sets.
+
+Warning: we need to use the simplified fraction: 6/4 = 3/2. Otherwise we miss
+some elements.
+
+Since 16^{3/2} == 64, S64[51,66]%2 == S16[76,100]%3.
+Since 32^{6/5} == 64, S64[51,83]%5 == S32[61,100]%6.
+
+[51,66]%2 intersect [51,83]%5 = {60}
+
+DST(64) = 50 - 8 - 6 + 1 = 37
+
+
+## Rest
+
+As we can see above, only the power matters in the computation of DST.
+For any x, y, k > 0, DST(x^k) == DST(y^k).
+
+DST(4) == DST(9) == DST(25) == DST(49) == DST(100) == 50.
+DST(27) == DST(8) == 50
+DST(81) == DST(16) == 41
+
+## Result
+
+Result = 87*99 + 5*DST(4) + 2*DST(8) + 2*DST(16) = 9183

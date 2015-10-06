@@ -1,0 +1,12 @@
+Recursive relation, with n>=1 the square "radius":
+
+	u_0 = 1,
+	u_n = u_{n-1} + 4(2n-1)^2 + 20n.
+
+Resolved relation, with n>=0:
+
+	u_n = 1 + 10 * n(n+1) + 4/3 * n(2n+1)(2n-1).
+
+For a 1001 spiral, the result is
+
+	u_500 = 669171001.

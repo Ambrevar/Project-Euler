@@ -1,0 +1,14 @@
+The n-th Fibonacci number is
+
+	F_n = (phi^n - psi^n) / sqrt(5) = (phi^n - (-phi)^{-n}) / sqrt(5)
+
+with phi = (1+sqrt(5))/2 and psi = (1-sqrt(5))/2.
+
+If F_n is the n-th Fibonacci number, then
+
+	n = floor( log_phi( F_n * sqrt(5) + 1/2 ) ).
+
+The first 1000-digit number is 10^999. The rank of the first Fibonacci number
+above 10^999 is
+
+	n = ceil ( log_phi( 10^999 * sqrt(5) + 1/2 ) ).

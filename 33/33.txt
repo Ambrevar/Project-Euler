@@ -1,0 +1,43 @@
+Conditions:
+
+* 0 < "ab"/"bc" < 1.
+
+* 1 ≤ a ≤ b < 10 and 0 ≤ c < 10.
+
+* If a = b, b < c < 10.
+
+Equation:
+
+  10*a*(b-c) = c*(b-a)
+
+or, equivalently:
+
+  9*a*(b-c) = b*(c-a)
+
+b = a implies b = c, which is exluded since 0 < "ab"/"bc" < 1.
+So b > a. Thus:
+
+* b-c > 0, b > c
+* c-a > 0, c > a
+
+To sum up:
+
+  b > c > a.
+
+
+Let's analyse the equation 9*a*(b-c) = b*(c-a).
+
+3*3 divides b*(c-a). If 3 does not divide b, then 9 divides c-a, so c-a=9,
+which is impossible. So b is either 3, 6 or 9.
+
+* b=9, so a*(9-c)=c-a, that is a*(10-c)=c. Solutions: (a,c) in {(1,5}, (4,8)}.
+
+* b=6, 3|(c-a). The equation becomes 9*a*(6-c)=6*(c-a).
+	* With c-a=6: -9*a*a=36, impossible.
+	* With c-a=3: a*(3-a)=2. Solutions: (a,c) in {(1,4), (2,5)}.
+
+* b=3, 3|(c-a). The equation becomes 9*a*(3-c)=3*(c-a).
+	* With c-a=3: -9a**a=9, impossible.
+	* With c-a=6: 9*a*(-3-a)=18, (impossible.
+
+Results: (a,b,c) in {(1,9,5), (4,9,8), (1,6,4), (2,6,5)}.
