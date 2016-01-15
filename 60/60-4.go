@@ -4,7 +4,7 @@ Let's consider a concat-prime family 'j, k, l' with no m < l such that 'j, k, l,
 m' is a concat-prime family. For every i > j, we will go through the same dead
 end with this 'j, k, l' tuple.
 
-Top optimize this we build the concat-prime families recursively.
+To optimize this we build the concat-prime families recursively.
 
 Despite the loop saving, the bookkeeping is too heavy and makes the agorithm
 slower overall.
