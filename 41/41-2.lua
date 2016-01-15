@@ -27,7 +27,7 @@ local function isprime(n)
 	return true
 end
 
--- n: n-th permutation, d: number of digits. We divide the permutation in slides
+-- n: n-th permutation, d: number of digits. We divide the permutation in slices
 -- of (d-1)!. This is slower than the recursive permutation generator, but here
 -- we access increasing values.
 local function permutate(n, d)
