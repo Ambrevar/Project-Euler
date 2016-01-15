@@ -33,7 +33,7 @@ end
 
 local sieve = make_sieve(100)
 
-local function permutate(array, size, result)
+local function permute(array, size, result)
 	if size == 1 then
 		local n = 0
 		for _, v in ipairs(array) do
@@ -53,7 +53,7 @@ local function permutate(array, size, result)
 	end
 end
 
-local function permutations (n)
+local function permutations(n)
 	-- Store the digits of n in a table.
 	local digits = {}
 	while n > 0 do
@@ -63,11 +63,7 @@ local function permutations (n)
 	end
 	
 	local p = {}
-	permutate(digits, #digits, p)
-
-	-- for v, _ in ppairs(p) do
-	-- 	print(v)
-	-- end
+	permute(digits, #digits, p)
 
 	return p
 end
