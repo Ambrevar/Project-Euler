@@ -19,14 +19,14 @@ is to make clear that nothing is precomputed.
 
 * The only output should be the result.
 
-* Some problem solution are not an algorithm but merely a mathematical
+* Some problem solutions are not an algorithm but merely a mathematical
 derivation (also known as a "pen and paper" solution).
 
 * Code should be clear and short.
 
 * Focus on the algorithm, avoid language implementation-specific optmization.
-Hardware optimizations are usually discarded, although some of them at the core
-of computing can be used (e.g. binary operations).
+Hardware-specific optimizations are usually discarded, although some of them,
+which are the essence of computer science, can be used (e.g. binary operations).
 
 * Every implementation should run in less than a minute on any decent computer
 as suggested on the home page. Strive to keep running-time below a second, or
@@ -44,9 +44,9 @@ performance depends on the input. There are usually trade-offs in memory/speed
 or speed/code length. These implementations are kept together for comparison.
 
 * Code has to be proven and should not be working just because of some lucky
-shot. Indeed, some wrong algorithms can output the right result.
+shot. Indeed, a wrong algorithms can output the right result.
 
-* Some problem evolve around big numbers, thus assisting the resolution with a
+* Some problems evolve around big numbers, thus assisting the resolution with a
 big number library makes the resolution trivial and pointless. The goal is to
 either avoid going through big numbers manipulation, or to find an efficient way
 to store them.
