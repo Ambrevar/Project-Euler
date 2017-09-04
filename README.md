@@ -22,7 +22,7 @@ is to make clear that nothing is precomputed.
 * Some problem solutions are not an algorithm but merely a mathematical
 derivation (also known as a "pen and paper" solution).
 
-* Code should be clear and short.
+* Code should be short and clear.
 
 * Focus on the algorithm, avoid language implementation-specific optmization.
 Hardware-specific optimizations are usually discarded, although some of them,
